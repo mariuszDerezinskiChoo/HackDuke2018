@@ -1,6 +1,7 @@
 package com.tsquad.hackduke18.fixmymorning;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class Algorithm {
@@ -14,8 +15,7 @@ public class Algorithm {
     }
 
     public List<Task> executeSelection(Task[] data, double duration) {
-        Task[] tasks = new Task[data.length];
-        tasks = data;
+        Task[] tasks = data;
 
         List<Task> negs = new ArrayList<>();
         List<Task> nonnegs = new ArrayList<>();
@@ -46,8 +46,33 @@ public class Algorithm {
             return finalUnorderedTasks;
         }
 
+        //start removing low priority items
+        while (sumNSLower > (duration - sumNNSLower)) {
+
+            //goodbye unlucky task of low priority
+            try {
+                Collections.sort(negs);
+                negs.remove(0);
+            } catch (Exception e) {
+                System.out.println(e);
+            }
+
+            //recalculate sum of L's for negs
+            for (Task t : negs)
+                sumNSLower += t.getLower();
+        }
+
+        finalUnorderedTasks.addAll(negs);
+        double timeLeft = duration - (sumNNSLower+sumNSLower);
+
         return finalUnorderedTasks;
 
+    }
+
+    private double proportionalIncrease(){
+
+
+        return 0.0;
     }
 
 }
