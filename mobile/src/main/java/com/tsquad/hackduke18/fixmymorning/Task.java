@@ -8,6 +8,7 @@ public class Task implements Comparable<Task>{
     private String date;
     private float order;
     private int ID;
+    private double duration;
 
     public Task(int id, String Name, float Upper, float Lower, float ORDER, int PRIORITY, String DATE) {
         name = Name;
@@ -17,8 +18,7 @@ public class Task implements Comparable<Task>{
         priority = PRIORITY;
         date = DATE;
         ID = id;
-
-        Algorithm algo = new Algorithm();
+        duration = lower;
     }
 
     public int getID() {return ID;}
@@ -46,6 +46,10 @@ public class Task implements Comparable<Task>{
     public String getDate() {
         return date;
     }
+
+    public double getDuration() {return duration;}
+
+    public void setDuration(double d) {duration = d;}
 
     @Override
     public int compareTo(Task t){
