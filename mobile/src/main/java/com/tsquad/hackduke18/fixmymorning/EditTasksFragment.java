@@ -1,4 +1,4 @@
-package com.example.dwinkelman.hackduke2018_daniel;
+package com.tsquad.hackduke18.fixmymorning;
 
 import android.annotation.SuppressLint;
 import android.app.ListFragment;

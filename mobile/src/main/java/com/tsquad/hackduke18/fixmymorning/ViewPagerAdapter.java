@@ -1,4 +1,4 @@
-package com.example.dwinkelman.hackduke2018_daniel;
+package com.tsquad.hackduke18.fixmymorning;
 
 import android.content.Context;
 import android.support.v4.app.Fragment;
