@@ -1,5 +1,8 @@
 package com.tsquad.hackduke18.fixmymorning;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Algorithm {
 
 	private double endtime;
@@ -13,14 +16,16 @@ public class Algorithm {
 	public Task[] executeSelection(Task[] data, double duration) {
 		Task[] tasks = new Task[data.length];
 		tasks = data;
-
-		List<Task> nonnegs = new ArrayList<>;
-		for Task t : tasks
+		List<Task> negs = new ArrayList<>();
+		List<Task> nonnegs = new ArrayList<>();
+		for (Task t : tasks)
 			if (t.getPriority()==6)
 				nonnegs.add(t);
+			else
+				negs.add(t);
 
 		double sumLower = 0;
-		for Task t : nonnegs
+		for (Task t : nonnegs)
 			sumLower += t.getLower();
 
 		if (sumLower>duration){
@@ -28,7 +33,11 @@ public class Algorithm {
 			System.exit(0);
 		}
 
-		
+
+
+
+
+		return null;
 		
 	}
 

@@ -1,3 +1,5 @@
+package com.tsquad.hackduke18.fixmymorning;
+
 public class Task {
     private String name;
     private float upper;
@@ -13,6 +15,8 @@ public class Task {
         order = ORDER;
         priority = PRIORITY;
         date = DATE;
+
+        Algorithm algo = new Algorithm();
     }
 
     public String getName() {
